@@ -35,7 +35,7 @@ public class ControladorRitmoRespiratorio {
 			respiratorio.setParametrosResp1(batimentos.getParameters("resEupneia.txt"));
 			respiratorio.setParametrosResp2(null);
 			respiratorio.setParametrosResp3(null);
-			respiratorio.setRetaRespiratorio(15);
+			respiratorio.setRetaRespiratorio(100);
 			respiratorio.setRetaRespiratorio1(0);
 			respiratorio.setRetaRespiratorio2(0);
 			respiratorio.setIndiceDesenhoResp(0);
@@ -60,7 +60,7 @@ public class ControladorRitmoRespiratorio {
 			respiratorio.setParametrosResp1(batimentos.getParameters("resBradipneia.txt"));
 			respiratorio.setParametrosResp2(null);
 			respiratorio.setParametrosResp3(null);
-			respiratorio.setRetaRespiratorio(100);
+			respiratorio.setRetaRespiratorio(150);
 			respiratorio.setRetaRespiratorio1(0);
 			respiratorio.setRetaRespiratorio2(0);
 			respiratorio.setIndiceDesenhoResp(0);
@@ -96,6 +96,7 @@ public class ControladorRitmoRespiratorio {
 			respiratorio.setValorRespiratorio("14");
 			respiratorio.setVelocidadePlotDesenho(20);
 			respiratorio.setNomeRespiratorio("Cheyne - Stoke");
+			
 			break;
 		
 		case "Biot's":
