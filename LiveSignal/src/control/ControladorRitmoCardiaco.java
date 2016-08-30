@@ -1,5 +1,9 @@
 package control;
 
+import java.util.Random;
+
+import org.jfree.chart.labels.IntervalCategoryItemLabelGenerator;
+
 import model.Cardiaco;
 
 public class ControladorRitmoCardiaco {
@@ -48,7 +52,12 @@ public class ControladorRitmoCardiaco {
 			cardiaco.setRetaCardiaco3(0);
 			cardiaco.setRetaCardiaco4(0);
 			cardiaco.setIndiceDesenho(0);
-			cardiaco.setValorBatimentoCardiaco("60");
+			
+			//Gerar valor Aleatório entre 60 e 100;
+			Random random = new Random();
+			Integer valorBatimentoCardiaco = 60 + (int)(Math.random() * 41);
+			cardiaco.setValorBatimentoCardiaco(Integer.toString(valorBatimentoCardiaco));
+			
 			cardiaco.setVelocidadeDesenhoCardiaco(60);
 			cardiaco.setVelocidadeRetaCardiaco(60);
 			cardiaco.setParametrosCar1(batimentos.getParameters("carRitmoSinusal.txt"));

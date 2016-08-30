@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -537,11 +538,20 @@ public class JanelaPrincipal{
 					{				
 						if (desenho) 
 						{		
-							Thread.sleep(cardiaco.getVelocidadeDesenhoCardiaco()); 
 							
+							Thread.sleep(cardiaco.getVelocidadeDesenhoCardiaco());
 							switch(par){
-							
 							case 1:
+								//Este bloco de código torna dinâmico a label que escreve a valor do batimento cardíaco 
+								//na tela. O valor eh alterado a cada leitura de batimento/desenho
+								if(cardiaco.getNomeCardiaco().equals("Ritmo Sinusal")  && cardiaco.getIndiceDesenho()==0){
+									Random random = new Random();
+									Integer valorBatimentoCardiaco = 60 + (int)(Math.random() * 41);
+									cardiaco.setValorBatimentoCardiaco(Integer.toString(valorBatimentoCardiaco));
+									ctrlProg.atualizarValorCardiaco(cardiaco.getValorBatimentoCardiaco());
+									
+								}
+								
 								int totalParametros1 = cardiaco.getParametrosCar1().size();								
 								lblImgCoracao.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/img/hearts30.png")));
 								

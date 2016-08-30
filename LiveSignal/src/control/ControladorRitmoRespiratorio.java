@@ -30,8 +30,8 @@ public class ControladorRitmoRespiratorio {
 		switch(ritmo)
 		{
 		case "Eupneia":
+			//Gera valor aleatório dentro de uma faixa
 			Integer valorRitmoRespiratorio = 12 + (int)(Math.random() * 9);
-			
 			respiratorio.setParametrosResp1(batimentos.getParameters("resEupneia.txt"));
 			respiratorio.setParametrosResp2(null);
 			respiratorio.setParametrosResp3(null);

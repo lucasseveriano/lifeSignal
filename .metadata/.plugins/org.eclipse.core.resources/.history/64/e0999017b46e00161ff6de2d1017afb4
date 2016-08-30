@@ -1,0 +1,13 @@
+package control;
+
+public class Programa2 {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) 
+	{
+		ControladorPrograma ctrlPrograma = new ControladorPrograma();
+	}
+
+}
