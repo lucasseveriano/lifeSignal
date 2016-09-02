@@ -223,12 +223,14 @@ public class JanelaMenu {
 				cbxRitmoRespiratorio.setBounds(20, 45, 332, 25);
 				cbxRitmoRespiratorio.setFont(new Font("Verdana", Font.BOLD, 14));
 				panelRitmoRespiratorio.add(cbxRitmoRespiratorio);
-				cbxRitmoRespiratorio.addItem("Bradipneia");
 				cbxRitmoRespiratorio.addItem("Eupneia");
+				cbxRitmoRespiratorio.addItem("Bradipneia");
 				cbxRitmoRespiratorio.addItem("Taquipneia");	
 				cbxRitmoRespiratorio.addItem("Apneia");
 				cbxRitmoRespiratorio.addItem("Cheyne - Stoke");
 				cbxRitmoRespiratorio.addItem("Biot's");
+				cbxRitmoRespiratorio.addItem("Kussmaul");
+				
 				cbxRitmoRespiratorio.addActionListener(new ActionListener() {					
 					@Override
 					public void actionPerformed(ActionEvent e) {

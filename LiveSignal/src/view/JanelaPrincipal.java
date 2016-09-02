@@ -374,12 +374,12 @@ public class JanelaPrincipal{
 		lblTemperatura1.setBounds(0, 0, 74, 84);
 		panelTemperatura.add(lblTemperatura1);
 		lblTemperatura1.setFont(new Font("Dialog", Font.BOLD, 66));
-		lblTemperatura1.setForeground(Color.WHITE);
+		lblTemperatura1.setForeground(Color.YELLOW);
 		
 		JLabel label = new JLabel(",");
 		label.setBounds(70, 0, 18, 84);
 		panelTemperatura.add(label);
-		label.setForeground(Color.WHITE);
+		label.setForeground(Color.YELLOW);
 		label.setFont(new Font("Dialog", Font.BOLD, 66));
 		label.setBackground(Color.WHITE);
 		
@@ -387,12 +387,12 @@ public class JanelaPrincipal{
 		lblTemperatura2.setBounds(86, 0, 74, 84);
 		panelTemperatura.add(lblTemperatura2);
 		lblTemperatura2.setFont(new Font("Dialog", Font.BOLD, 66));
-		lblTemperatura2.setForeground(Color.WHITE);
+		lblTemperatura2.setForeground(Color.YELLOW);
 		
 		JLabel lblc = new JLabel("ºC");
 		lblc.setBounds(154, 0, 91, 84);
 		panelTemperatura.add(lblc);
-		lblc.setForeground(Color.WHITE);
+		lblc.setForeground(Color.YELLOW);
 		lblc.setFont(new Font("Dialog", Font.BOLD, 66));
 		lblc.setBackground(Color.WHITE);
 		
@@ -403,40 +403,40 @@ public class JanelaPrincipal{
 		frmMaingraph.getContentPane().add(panelPressao);
 		
 		lblValorMmHg = new JLabel("93");
-		lblValorMmHg.setForeground(Color.WHITE);
+		lblValorMmHg.setForeground(Color.RED);
 		lblValorMmHg.setFont(new Font("Dialog", Font.BOLD, 30));
 		lblValorMmHg.setBackground(Color.WHITE);
 		lblValorMmHg.setBounds(175, 54, 110, 84);
 		panelPressao.add(lblValorMmHg);
 		
 		lblPressaoMaxima = new JLabel("120");
-		lblPressaoMaxima.setForeground(Color.WHITE);
+		lblPressaoMaxima.setForeground(Color.RED);
 		lblPressaoMaxima.setFont(new Font("Dialog", Font.BOLD, 66));
 		lblPressaoMaxima.setBounds(12, 0, 123, 84);
 		panelPressao.add(lblPressaoMaxima);
 		
 		JLabel label_3 = new JLabel("/");
-		label_3.setForeground(Color.WHITE);
+		label_3.setForeground(Color.RED);
 		label_3.setFont(new Font("Dialog", Font.BOLD, 66));
 		label_3.setBackground(Color.WHITE);
 		label_3.setBounds(131, 0, 18, 84);
 		panelPressao.add(label_3);
 		
 		lblPressaoMinima = new JLabel("80");
-		lblPressaoMinima.setForeground(Color.WHITE);
+		lblPressaoMinima.setForeground(Color.RED);
 		lblPressaoMinima.setFont(new Font("Dialog", Font.BOLD, 66));
 		lblPressaoMinima.setBounds(161, 0, 96, 84);
 		panelPressao.add(lblPressaoMinima);
 		
 		JLabel lblMmhg = new JLabel("mmHg");
-		lblMmhg.setForeground(Color.WHITE);
+		lblMmhg.setForeground(Color.RED);
 		lblMmhg.setFont(new Font("Dialog", Font.BOLD, 30));
 		lblMmhg.setBackground(Color.WHITE);
 		lblMmhg.setBounds(53, 52, 110, 84);
 		panelPressao.add(lblMmhg);
 		
 		JLabel label_2 = new JLabel("(        )");
-		label_2.setForeground(Color.WHITE);
+		label_2.setForeground(Color.RED);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 30));
 		label_2.setBackground(Color.WHITE);
 		label_2.setBounds(155, 52, 84, 84);
@@ -542,15 +542,15 @@ public class JanelaPrincipal{
 							Thread.sleep(cardiaco.getVelocidadeDesenhoCardiaco());
 							switch(par){
 							case 1:
-								//Este bloco de código torna dinâmico a label que escreve a valor do batimento cardíaco 
-								//na tela. O valor eh alterado a cada leitura de batimento/desenho
-								if(cardiaco.getNomeCardiaco().equals("Ritmo Sinusal")  && cardiaco.getIndiceDesenho()==0){
-									Random random = new Random();
-									Integer valorBatimentoCardiaco = 60 + (int)(Math.random() * 41);
-									cardiaco.setValorBatimentoCardiaco(Integer.toString(valorBatimentoCardiaco));
-									ctrlProg.atualizarValorCardiaco(cardiaco.getValorBatimentoCardiaco());
-									
-								}
+//								//Este bloco de código torna dinâmico a label que escreve a valor do batimento cardíaco 
+//								//na tela. O valor eh alterado a cada leitura de batimento/desenho
+//								if(cardiaco.getNomeCardiaco().equals("Ritmo Sinusal")  && cardiaco.getIndiceDesenho()==0){
+//									Random random = new Random();
+//									Integer valorBatimentoCardiaco = 60 + (int)(Math.random() * 41);
+//									cardiaco.setValorBatimentoCardiaco(Integer.toString(valorBatimentoCardiaco));
+//									ctrlProg.atualizarValorCardiaco(cardiaco.getValorBatimentoCardiaco());
+//									
+//								}
 								
 								int totalParametros1 = cardiaco.getParametrosCar1().size();								
 								lblImgCoracao.setIcon(new ImageIcon(JanelaPrincipal.class.getResource("/img/hearts30.png")));
@@ -1002,39 +1002,38 @@ public class JanelaPrincipal{
  								if(respiratorio.getRetaRespiratorio() == 0)
  									respiratorio.setDesenho(true);
  								
- 								if(indiceReta <= respiratorio.getRetaRespiratorio())
+ 								if(indiceReta <= respiratorio.getRetaRespiratorio() || respiratorio.getNomeRespiratorio().equals("Apneia"))
  								{									
  									seriesRitmoRespiratorio.add(respiratorio.getResPosicaoX(), valorDesenhoReta);
  									ctrlProg.plotRespiratorioJanelaSecundaria(respiratorio.getResPosicaoX(), valorDesenhoReta);
 									respiratorio.setResPosicaoX(respiratorio.getResPosicaoX() + (float) 0.1);	
 									indiceReta ++;
  								}
- 								else{								
+ 								else{				
  									respiratorio.setDesenho(true);
- 								
  									if(respiratorio.getRetaRespiratorio1() != 0)
- 										reta = 1;		
+ 										reta = 1;
  								}
  								
  							break;
  								case 1:
- 									if(indiceReta <= respiratorio.getRetaRespiratorio1())
+ 									if(indiceReta <= respiratorio.getRetaRespiratorio1() || respiratorio.getNomeRespiratorio().equals("Apneia"))
  									{
+ 										System.out.println("Está aki!");
  										seriesRitmoRespiratorio.add(respiratorio.getResPosicaoX(), valorDesenhoReta);
  										ctrlProg.plotRespiratorioJanelaSecundaria(respiratorio.getResPosicaoX(), valorDesenhoReta);
 										respiratorio.setResPosicaoX(respiratorio.getResPosicaoX() + (float) 0.1);	
 										indiceReta ++;
  									}
- 									else{								
+ 									else{						
  										respiratorio.setDesenho(true);
- 									
  										if(respiratorio.getRetaRespiratorio2() != 0)
- 											reta = 2;		
+ 											reta = 2;
  									}
  									
  								break;
  								case 2:
- 									if(indiceReta <= respiratorio.getRetaRespiratorio2())
+ 									if(indiceReta <= respiratorio.getRetaRespiratorio2() || respiratorio.getNomeRespiratorio().equals("Apneia"))
  									{										
  										seriesRitmoRespiratorio.add(respiratorio.getResPosicaoX(), valorDesenhoReta);
  										ctrlProg.plotRespiratorioJanelaSecundaria(respiratorio.getResPosicaoX(), valorDesenhoReta);

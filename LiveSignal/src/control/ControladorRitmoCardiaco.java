@@ -416,7 +416,7 @@ public class ControladorRitmoCardiaco {
 			cardiaco.setRetaCardiaco4(0);
 			cardiaco.setIndiceDesenho(0);
 			cardiaco.setValorBatimentoCardiaco("170");
-			cardiaco.setVelocidadeDesenhoCardiaco(20);
+			cardiaco.setVelocidadeDesenhoCardiaco(10);
 			cardiaco.setVelocidadeRetaCardiaco(60);
 			cardiaco.setParametrosCar1(batimentos.getParameters("carTarquicardiaVentricular.txt"));
 			cardiaco.setParametrosCar2(null);
